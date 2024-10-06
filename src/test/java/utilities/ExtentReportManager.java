@@ -87,8 +87,11 @@ public class ExtentReportManager implements ITestListener {
         if (!reportOpened) {
             String pathOfExtentReport = System.getProperty("user.dir") + "\\reports\\" + repName;
             File extentReport = new File(pathOfExtentReport);
+            String pathOfCucuReport = System.getProperty("user.dir")+"\\testReports\\cucumber.html";
+           File cucuReport = new File(pathOfCucuReport);
             try {
                 Desktop.getDesktop().browse(extentReport.toURI());
+                Desktop.getDesktop().browse(cucuReport.toURI());
                 reportOpened = true; // Set the flag to true after opening the report
             } catch (IOException e) {
                 e.printStackTrace();
