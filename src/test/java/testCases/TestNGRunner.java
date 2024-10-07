@@ -14,6 +14,11 @@ public class TestNGRunner extends AbstractTestNGCucumberTests {
     @Override
     @DataProvider(parallel = true) // This enables parallel execution
     public Object[][] scenarios() {
+
+        String cucumberTags = System.getProperty("cucumber.filter.tags");
+        if (cucumberTags != null) {
+            System.setProperty("cucumber.filter.tags", cucumberTags);
+        }
         return super.scenarios();
     }
 
