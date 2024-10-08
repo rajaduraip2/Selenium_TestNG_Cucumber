@@ -9,7 +9,10 @@ import org.testng.annotations.DataProvider;
         plugin ={
         "pretty", // Generates a pretty console output
         "html:testReports/cucumber.html", // Generates an HTML report
-        "json:testReports/cucumber.json",} )
+        "json:testReports/cucumber.json",
+        "rerun:target/failed_scenarios.txt"}
+
+)
 public class TestNGRunner extends AbstractTestNGCucumberTests {
     @Override
     @DataProvider(parallel = true) // This enables parallel execution
